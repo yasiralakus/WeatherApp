@@ -20,7 +20,7 @@ export default function App() {
 
     useEffect( () => {
         async function fetchData() {
-            let database = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=3a7fef278f1c4b4586b135731240401&q=${inputValue}&days=7&aqi=yes&alerts=yes`).then(r => r.json());
+            let database = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=3a7fef278f1c4b4586b135731240401&q=${inputValue}&days=3&aqi=yes&alerts=yes`).then(r => r.json());
             setLocation(database.location);
             setForecast(database.forecast.forecastday);
             setCurrent(database.current)
@@ -42,8 +42,10 @@ export default function App() {
             
             <div className="input">
                 <p>{dataLocation.name} / {dataLocation.country} </p>
-                <input type="text" placeholder="Şehir giriniz..." onChange={inputChange} value={inputValue}/>
-                <button onClick={clickButton}><i className="fa-solid fa-magnifying-glass"></i></button>
+                <div className="searchInput">
+                    <input type="text" placeholder="Şehir giriniz..." onChange={inputChange} value={inputValue}/>
+                    <button onClick={clickButton}><i className="fa-solid fa-magnifying-glass"></i></button>
+                </div>
             </div>
 
 

@@ -38,12 +38,9 @@ body {
 .input {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
-    position: relative;
     & p {
-        position: absolute;
-        left: 0;
         color: #e8c547;
         letter-spacing: 1px;
     }
@@ -68,9 +65,19 @@ body {
     
 }
 
+.searchInput {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    & input {
+        width: 50%;
+    }
+}
+
 .results {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -143,7 +150,7 @@ body {
 }
 
 
-@media (width < 1700px) {
+@media (width < 700px) {
 
     body {
         padding: 30px;
@@ -161,12 +168,12 @@ body {
 
     .input {
         & input {
-            width: 100%;;
+            width: 100%;
+            font-size: 14px;
         }
 
         & p {
-            top: 70px;
-            left: 0;
+            font-size: 12px;
         }
     }
 
